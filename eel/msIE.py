@@ -5,12 +5,11 @@ from typing import List
 
 from eel.types import OptionsDictT
 
-name: str = 'Edge'
+name: str = 'MSIE'
 
 
 def run(_path: str, options: OptionsDictT, start_urls: List[str]) -> None:
-    cmd = 'start msedge --app={}'.format(start_urls[0])
-    cmd = cmd + options['cmdline_args']
+    cmd = 'start microsoft-edge:{}'.format(start_urls[0])
     sps.Popen(cmd, stdout=sys.stdout, stderr=sys.stderr, stdin=sps.PIPE, shell=True)
 
 
