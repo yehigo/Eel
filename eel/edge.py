@@ -9,8 +9,8 @@ name: str = 'Edge'
 
 
 def run(_path: str, options: OptionsDictT, start_urls: List[str]) -> None:
-    cmd = 'start msedge --app={}'.format(start_urls[0])
-    cmd = cmd + options['cmdline_args']
+    cmd = 'start msedge --app={} '.format(start_urls[0])
+    cmd = cmd + (" ".join(options['cmdline_args']))
     sps.Popen(cmd, stdout=sys.stdout, stderr=sys.stderr, stdin=sps.PIPE, shell=True)
 
 
